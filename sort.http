@@ -1,0 +1,25 @@
+GET http://127.0.0.1:9200/company_events/_search
+Content-Type: application/json
+
+{
+    "query": {
+        "match_all" : {
+
+        }
+    },
+    "sort": [
+        {
+            "_geo_distance": {
+                "geo_location": {
+                    "lat": 41.0010788,
+                    "lon": 28.642054
+                },
+                "order":         "asc",
+                "unit":          "km",
+                "distance_type": "plane"
+            }
+        }
+    ]
+}
+
+###
